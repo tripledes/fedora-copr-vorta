@@ -2,12 +2,11 @@
 %global debug_package %{nil}
 
 Name:           %{srcname}
-Version:        0.7.3
+Version:        0.8.7
 Release:        1%{?dist}
 Summary:        A GUI for Borg Backup
 License:        GPLv3
 URL:            https://vorta.borgbase.com/
-#Source0:       %{pypi_source}
 Source0:        https://github.com/borgbase/vorta/archive/v%{version}.tar.gz
 
 Requires:       python3-appdirs
@@ -19,6 +18,8 @@ Requires:       python3-APScheduler
 Requires:       python3-psutil
 Requires:       python3-secretstorage
 Requires:       borgbackup
+
+BuildArch:      noarch
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-pip
