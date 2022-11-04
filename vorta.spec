@@ -2,8 +2,8 @@
 %global debug_package %{nil}
 
 Name:           %{srcname}
-Version:        0.8.7
-Release:        2%{?dist}
+Version:        0.8.8
+Release:        1%{?dist}
 Summary:        A GUI for Borg Backup
 License:        GPLv3
 URL:            https://vorta.borgbase.com/
@@ -53,6 +53,9 @@ install -D %{_builddir}/%{srcname}-%{version}/src/vorta/assets/metadata/com.borg
 %{_datadir}/*
 
 %changelog
+* Fri Nov 04 2022 Sergi Jimenez <tripledes@fedoraproject.org> - 0.8.8-1
+- Bumpt to version 0.8.8
+
 * Thu Aug 25 2022 Sergi Jimenez <tripledes@fedoraproject.org> - 0.8.7-2
 - Bump version to 0.8.7
 - Switch to noarch
