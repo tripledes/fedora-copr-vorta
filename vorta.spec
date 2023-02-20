@@ -2,12 +2,13 @@
 %global debug_package %{nil}
 
 Name:           %{srcname}
-Version:        0.8.8
-Release:        1%{?dist}
+Version:        0.8.10
+Release:        3%{?dist}
 Summary:        A GUI for Borg Backup
 License:        GPLv3
 URL:            https://vorta.borgbase.com/
 Source0:        https://github.com/borgbase/vorta/archive/v%{version}.tar.gz
+Patch0:         prune.patch
 
 Requires:       python3-appdirs
 Requires:       python3-paramiko
@@ -33,7 +34,7 @@ to protect your data from disk failure, ransomware and theft
 
 %prep
 
-%autosetup -n %{srcname}-%{version}
+%autosetup -p1 -n %{srcname}-%{version} 
 
 %build
 %py3_build
@@ -53,6 +54,10 @@ install -D %{_builddir}/%{srcname}-%{version}/src/vorta/assets/metadata/com.borg
 %{_datadir}/*
 
 %changelog
+* Mon Feb 20 2023 Sergi Jimenez <tripledes@fedoraproject.org> - 0.8.10-2
+- Bumpt to version 0.8.10
+- Add prune patch fix
+
 * Fri Nov 04 2022 Sergi Jimenez <tripledes@fedoraproject.org> - 0.8.8-1
 - Bumpt to version 0.8.8
 

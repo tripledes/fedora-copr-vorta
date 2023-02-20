@@ -1,0 +1,16 @@
+diff -ur vorta-0.8.10.orig/src/vorta/borg/prune.py vorta-0.8.10/src/vorta/borg/prune.py
+--- vorta-0.8.10.orig/src/vorta/borg/prune.py	2023-01-22 12:54:46.000000000 +0100
++++ vorta-0.8.10/src/vorta/borg/prune.py	2023-02-20 16:16:50.975637262 +0100
+@@ -47,8 +47,10 @@
+         if profile.prune_prefix:
+             formatted_prune_prefix = format_archive_name(profile, profile.prune_prefix)
+ 
+-            if borg_compat.check('V122'):
+-                pruning_opts += ['-a', 'sh:' + formatted_prune_prefix + '*']
++            if borg_compat.check('V2'):
++                pruning_opts += ['-a', f"sh:{formatted_prune_prefix}*"]
++            elif borg_compat.check('V122'):
++                pruning_opts += ['-a', f"{formatted_prune_prefix}*"]
+             else:
+                 pruning_opts += ['--prefix', formatted_prune_prefix]
+ 
