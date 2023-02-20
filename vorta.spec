@@ -54,7 +54,7 @@ install -D %{_builddir}/%{srcname}-%{version}/src/vorta/assets/metadata/com.borg
 %{_datadir}/*
 
 %changelog
-* Mon Feb 20 2023 Sergi Jimenez <tripledes@fedoraproject.org> - 0.8.10-2
+* Mon Feb 20 2023 Sergi Jimenez <tripledes@fedoraproject.org> - 0.8.10-3
 - Bumpt to version 0.8.10
 - Add prune patch fix
 
