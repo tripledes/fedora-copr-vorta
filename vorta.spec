@@ -3,7 +3,7 @@
 
 Name:           %{srcname}
 Version:        0.8.10
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A GUI for Borg Backup
 License:        GPLv3
 URL:            https://vorta.borgbase.com/
@@ -13,16 +13,14 @@ Patch0:         prune.patch
 Requires:       python3-appdirs
 Requires:       python3-paramiko
 Requires:       python3-peewee
-Requires:       python3-dateutil
-Requires:       python3-qt5
-Requires:       python3-APScheduler
 Requires:       python3-psutil
+Requires:       python3-qt5
 Requires:       python3-secretstorage
+Requires:       python3-setuptools
 Requires:       borgbackup
 
 BuildArch:      noarch
 BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
 BuildRequires:  python3-pip
 BuildRequires:  python3-wheel
 BuildRequires:  python-rpm-macros
@@ -54,6 +52,9 @@ install -D %{_builddir}/%{srcname}-%{version}/src/vorta/assets/metadata/com.borg
 %{_datadir}/*
 
 %changelog
+* Sun Mar 19 2023 Sergi Jimenez <tripledes@fedoraproject.org> - 0.8.10-4
+- Fix dependencies
+
 * Mon Feb 20 2023 Sergi Jimenez <tripledes@fedoraproject.org> - 0.8.10-3
 - Bumpt to version 0.8.10
 - Add prune patch fix
